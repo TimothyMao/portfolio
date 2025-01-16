@@ -30,7 +30,7 @@ body {
     padding-bottom: 6px;
   }
 
-  #experience {
+   #experience {
     clear: both;  
   }
 
@@ -88,3 +88,18 @@ body {
     line-height: 1.1;
     text-wrap: balance;
   }
+
+  h1, h2{
+    font-family: "Georgia", serif;
+  }
+  body {
+      font-family: "Arial", sans-serif;
+      background: linear-gradient(to bottom, oklch(95% 2% 260), oklch(90% 2% 260));
+  }
+  section {
+    padding: 1em;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px oklch(40% 0.05 250 / 0.1);
+    background-color: oklch(90% 6% 265);
+    }
