@@ -7,6 +7,11 @@ body {
     margin-inline: auto;
     padding: 0 20px;
   }
+
+  input, textarea, button, select {
+    font-family: inherit;
+    font-size: 80%;      
+  }
   
   nav {
     --border-color: oklch(50% 10% 200 / 40%);
@@ -46,7 +51,7 @@ body {
 
   html[color-scheme="light"] {
     color-scheme: light;
-}
+  }
 
   html[color-scheme="dark"] {
       color-scheme: dark;
@@ -54,7 +59,13 @@ body {
 
   html[color-scheme="automatic"] {
     color-scheme: light dark
-}
+  }
+
+  .color-scheme{
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
 
   nav a:hover {
     border-bottom-width: 0.4em;
