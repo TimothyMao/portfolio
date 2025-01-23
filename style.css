@@ -9,10 +9,12 @@ body {
   }
 
   nav {
+    --border-color: oklch(50% 10% 200 / 40%);
     display: flex;
   }
 
   nav a {
+    border-bottom-color: var(--border-color);
     flex: 1;
     text-decoration: none;
     color: inherit;
@@ -21,12 +23,11 @@ body {
     margin-bottom: 1em;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: oklch;
   }
 
   nav a.current{
+    border-bottom-color: var(--border-color);
     border-bottom-width: 0.4em;
-    border-bottom-color: oklch(85% 3% 200);
     padding-bottom: 6px;
   }
 
@@ -40,12 +41,13 @@ body {
 
   html {
     accent-color: var(--color-accent);
+    color-scheme: light dark;
   }
 
   nav a:hover {
     border-bottom-width: 0.4em;
-    border-bottom-color: var(--color-accent);
-    background-color: oklch(from var(--color-accent) 95% 5% h);
+    border-bottom-color: var(--border-color);
+    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
     padding-bottom: 6px; 
   }
 
@@ -94,12 +96,13 @@ body {
   }
   body {
       font-family: "Arial", sans-serif;
-      background: linear-gradient(to bottom, oklch(95% 2% 260), oklch(90% 2% 260));
+      /*background: linear-gradient(to bottom, oklch(95% 2% 260), oklch(90% 2% 260)); */
   }
   section {
     padding: 1em;
     margin-bottom: 2em;
     border-radius: 8px;
-    box-shadow: 0 2px 4px oklch(40% 0.05 250 / 0.1);
-    background-color: oklch(90% 6% 265);
+    /*box-shadow: 0 2px 4px oklch(40% 0.05 250 / 0.1);
+    background-color: oklch(90% 6% 265); */
     }
+  
