@@ -44,8 +44,25 @@ for (let p of pages) {
       if (a.host !== location.host) {
         a.target = "_blank";
     }
-    
+
     nav.append(a);
   }
 
+
+  document.body.insertAdjacentHTML(
+    'afterbegin',
+    `
+      <label class="color-scheme">
+          Theme:
+          <select id="color-scheme-select">
+            <option value="automatic">Automatic</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+      </label>`
+  );
+
+  document.getElementById('color-scheme-select').addEventListener('change', function() {
+    document.documentElement.setAttribute('color-scheme', this.value);
+  });
 
