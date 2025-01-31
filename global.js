@@ -96,8 +96,6 @@ for (let p of pages) {
     }
 }
 
-  fetchJSON("../lib/projects.json");
-
 /*
   export function renderProjects(project, containerElement) {
     containerElement.innerHTML = '';
