@@ -1,9 +1,9 @@
 [
     {
-        "title": "Recipes and Ratings",
-        "year": "2024",
+        "title": "COGS108_Repo",
+        "year": "2025",
         "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-        "description": "Project for dsc80 that explored a Recipes and Ratings dataset and compared them."
+        "description": "Upcoming project for COGS108."
     },
     {
         "title": "Expository Visualization",
@@ -18,10 +18,10 @@
         "description": "Creates two static visualizations using the same dataset. The first is a truthful representation of the data. The second is a deceptive visualization, designed to deceive the viewer."
     },
     {
-        "title": "COGS108_Repo",
-        "year": "2025",
+        "title": "Recipes and Ratings",
+        "year": "2024",
         "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-        "description": "Upcoming project for COGS108."
+        "description": "Project for dsc80 that explored a Recipes and Ratings dataset and compared them."
     },
     {
         "title": "Quo, laborum. Corporis, cumque!",
