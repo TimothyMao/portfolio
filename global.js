@@ -98,7 +98,7 @@ for (let p of pages) {
 
   fetchJSON("../lib/projects.json");
 
-
+/*
   export function renderProjects(project, containerElement) {
     containerElement.innerHTML = '';
     // validate the parameters
@@ -116,3 +116,26 @@ for (let p of pages) {
       containerElement.appendChild(article);
   });
 }
+*/
+
+export function renderProjects(project, containerElement, headingLevel = 'h2') {
+  // write javascript that will allow dynamic heading levels based on renderProjects function
+  containerElement.innerHTML = '';
+  // validate the parameters
+  if (!project || !containerElement) {
+    console.error('Invalid project or containerElement');
+    return;
+  }
+  project.forEach(project => {
+    const article = document.createElement('article');
+    article.innerHTML = `
+      <${headingLevel}>${project.title}</${headingLevel}>
+      <img src="${project.image}" alt="${project.title}">
+      <p>${project.description}</p>
+    `;
+    containerElement.appendChild(article);
+});
+}
+const projectsData = await fetchJSON('../lib/projects.json');
+const container = document.querySelector('.projects');
+renderProjects(projectsData, container, 'h3');
