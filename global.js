@@ -119,7 +119,6 @@ for (let p of pages) {
 */
 
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
-  // write javascript that will allow dynamic heading levels based on renderProjects function
   containerElement.innerHTML = '';
   // validate the parameters
   if (!project || !containerElement) {
@@ -141,3 +140,8 @@ const projectsData = await fetchJSON('../lib/projects.json');
 const container = document.querySelector('.projects');
 renderProjects(projectsData, container, 'h3');
 */
+
+export async function fetchGitHubData(username) {
+  // return statement here
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
