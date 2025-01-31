@@ -83,7 +83,8 @@ for (let p of pages) {
         if (!response.ok) {
           throw new Error(`Failed to fetch projects: ${response.statusText}`);
         }
-        
+        // use console.log to see the response
+        console.log(response);
         const data = await response.json();
         return data;
 
