@@ -1,23 +1,27 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
+        "title": "Recipes_RatingsRecipes_Ratings",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus voluptatum rem soluta earum, dolorum nulla autem dicta asperiores, modi nihil, reiciendis impedit. Fugiat quibusdam temporibus rem a velit magnam iste?"
+        "description": "Final project for dsc80 comparing Recipes and Ratings datasets."
     },
     {
-        "title": "Nobis velit ipsum tempora.",
+        "title": "COGS108_Repo",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Repellat ad molestiae cupiditate harum explicabo quisquam ex provident vel, totam laboriosam fuga sit suscipit, aperiam saepe libero itaque quas! Ab veniam debitis soluta ipsum enim obcaecati vel tempora laboriosam?"
+        "description": "Upcoming project for COGS108."
     },
     {
-        "title": "Ut reprehenderit nihil reiciendis?",
+        "title": "Expository Visualization",
+        "year":"2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ducimus ipsam minus est ipsa ex odio totam sed vel eos officiis? Possimus omnis saepe blanditiis ullam ipsa laboriosam, eos dolores recusandae velit earum sequi asperiores aspernatur dolore, iure consequuntur?"
+        "description": "Designed an expository visualization to clearly communicate an idea based on a small data set"
     },
     {
-        "title": "Illo magni adipisci distinctio.",
+        "title": "Deceptive Visualization",
+        "year":"2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Pariatur nostrum necessitatibus esse aut temporibus quis veniam labore quidem atque quae sed saepe recusandae, animi ut aliquam itaque similique numquam modi! Possimus, consectetur ullam accusamus ipsa ducimus velit. Impedit."
+        "description": "Creates two static visualizations using the same dataset. The first is a truthful representation of the data. The second is a deceptive visualization, designed to deceive the viewer."
     },
     {
         "title": "Obcaecati explicabo alias deserunt.",
