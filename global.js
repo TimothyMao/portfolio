@@ -136,6 +136,8 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
     containerElement.appendChild(article);
 });
 }
+/* code to test renderProjects function
 const projectsData = await fetchJSON('../lib/projects.json');
 const container = document.querySelector('.projects');
 renderProjects(projectsData, container, 'h3');
+*/
