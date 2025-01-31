@@ -129,6 +129,21 @@ body {
     background-color: oklch(90% 6% 265); */
     }
   
-    .projects{
-      margin-top: 2rem;
-    }
+  .projects{
+    margin-top: 2rem;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em;
+  }
+  
+  dt {
+      grid-row: 1;
+  }
+  
+  dd {
+      grid-row: 2;
+      margin: 0;
+  }
