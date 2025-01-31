@@ -85,13 +85,15 @@ for (let p of pages) {
         }
         // use console.log to see the response
         console.log(response);
+        
         const data = await response.json();
+        //add console.log to see the data
+        console.log(data);
         return data;
-
 
     } catch (error) {
         console.error('Error fetching or parsing JSON data:', error);
     }
 }
 
-  
+  fetchJSON("../lib/projects.json");
