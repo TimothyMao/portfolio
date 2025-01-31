@@ -1,15 +1,9 @@
 [
     {
-        "title": "Recipes_RatingsRecipes_Ratings",
+        "title": "Recipes and Ratings",
         "year": "2024",
         "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-        "description": "Final project for dsc80 comparing Recipes and Ratings datasets."
-    },
-    {
-        "title": "COGS108_Repo",
-        "year": "2025",
-        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-        "description": "Upcoming project for COGS108."
+        "description": "Project for dsc80 that explored a Recipes and Ratings dataset and compared them."
     },
     {
         "title": "Expository Visualization",
@@ -24,9 +18,10 @@
         "description": "Creates two static visualizations using the same dataset. The first is a truthful representation of the data. The second is a deceptive visualization, designed to deceive the viewer."
     },
     {
-        "title": "Obcaecati explicabo alias deserunt.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Quam temporibus commodi repellat dignissimos nulla, accusantium magni in eum animi sunt deserunt, pariatur eos debitis nihil est. Praesentium officiis nostrum quos corrupti saepe culpa nisi omnis alias iusto pariatur!"
+        "title": "COGS108_Repo",
+        "year": "2025",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Upcoming project for COGS108."
     },
     {
         "title": "Quo, laborum. Corporis, cumque!",
@@ -57,6 +52,11 @@
         "title": "Dolorum qui architecto rerum.",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Nam exercitationem doloremque illum dolores nemo dolor aliquid, numquam, mollitia explicabo non ad illo voluptatibus, voluptas nostrum id rerum eaque tempora. Nulla iusto officia libero neque odio similique eaque laborum?"
+    },
+    {
+        "title": "Voluptate praesentium odio adipisci.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Consectetur repudiandae accusamus nesciunt, magni, repellat aspernatur maxime autem explicabo deleniti ipsa accusantium est eum sequi adipisci fugiat eligendi eveniet reiciendis obcaecati dignissimos! Nostrum provident eum pariatur odit itaque nulla."
     },
     {
         "title": "Voluptate praesentium odio adipisci.",
