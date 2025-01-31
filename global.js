@@ -97,3 +97,22 @@ for (let p of pages) {
 }
 
   fetchJSON("../lib/projects.json");
+
+
+  export function renderProjects(project, containerElement) {
+    containerElement.innerHTML = '';
+    // validate the parameters
+    if (!project || !containerElement) {
+      console.error('Invalid project or containerElement');
+      return;
+    }
+    project.forEach(project => {
+      const article = document.createElement('article');
+      article.innerHTML = `
+        <h3>${project.title}</h3>
+        <img src="${project.image}" alt="${project.title}">
+        <p>${project.description}</p>
+      `;
+      containerElement.appendChild(article);
+  });
+}
