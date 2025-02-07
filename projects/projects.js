@@ -46,19 +46,7 @@ data.forEach((d, idx) => {
           .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
 })
 
-let query = '';
-
-let searchInput = document.querySelector('.searchBar');
-
-searchInput.addEventListener('input', (event) => {
-    query = event.target.value;
-    
-    let filteredProjects = projects.filter((project) => {
-        let values = Object.values(project).join('\n').toLowerCase();
-        return values.includes(query.toLowerCase());
-    });
-
-    // Store SVG selection and clear paths
+function renderPieChart(filteredProjects) {
     let newSVG = d3.select('svg');
     newSVG.selectAll('path').remove();
     d3.select('.legend').selectAll('*').remove();
@@ -77,7 +65,6 @@ searchInput.addEventListener('input', (event) => {
     let newArcData = newSliceGenerator(newData);
     let newArcs = newArcData.map((d) => arcGenerator(d));
 
-    // Use stored SVG selection for new paths
     newArcs.forEach((arc, idx) => {
         newSVG.append('path')
             .attr('d', arc)
@@ -90,21 +77,49 @@ searchInput.addEventListener('input', (event) => {
             .attr('style', `--color:${colors(idx)}`)
             .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
     });
+}
 
-    renderProjects(filteredProjects, projectsContainer, 'h2');
-});
+let query = '';
+let searchInput = document.querySelector('.searchBar');
 
-  // TODO: render updated projects
-  renderPieChart(projects);
+searchInput.addEventListener('input', (event) => {
+    query = event.target.value;
+    
+    let filteredProjects = projects.filter((project) => {
+        let values = Object.values(project).join('\n').toLowerCase();
+        return values.includes(query.toLowerCase());
+    });
 
-  searchInput.addEventListener('change', (event) => {
-    let filteredProjects = setQuery(event.target.value);
-    // re-render legends and pie chart when event triggers
     renderProjects(filteredProjects, projectsContainer, 'h2');
     renderPieChart(filteredProjects);
-  });
+});
+
+// Initial render
+renderPieChart(projects);
 
 
 
+
+
+let svg = d3.select('svg');
+let selectedIndex = -1;
+  svg.selectAll('path').remove();
+  arcs.forEach((arc, i) => {
+    svg
+      .append('path')
+      .attr('d', arc)
+      .attr('fill', colors(i))
+      .on('click', () => {
+        selectedIndex = selectedIndex === i ? -1 : i;
   
+        svg
+            .selectAll('path')
+            .attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : ''));
+        
+            legend
+            .selectAll('li')
+            .attr('class', (_, idx) => idx === selectedIndex ? 'selected' : '');
+        });
+      });
+
 
