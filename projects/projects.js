@@ -62,13 +62,21 @@ function handleArcClick(idx, data) {
     legend.selectAll('li')
         .attr('class', (_, arcIdx) => (arcIdx === selectedIndex ? 'selected' : ''));
 
-    if (selectedIndex === -1) {
-        renderProjects(projects, projectsContainer, 'h2');
-    } else {
+    let filteredProjects = projects;
+
+    if (selectedIndex !== -1) {
         let selectedYear = data[selectedIndex].label;
-        let filteredProjects = projects.filter((project) => project.year === selectedYear);
-        renderProjects(filteredProjects, projectsContainer, 'h2');
+        filteredProjects = filteredProjects.filter((project) => project.year === selectedYear);
     }
+
+    if (query) {
+        filteredProjects = filteredProjects.filter((project) => {
+            let values = Object.values(project).join('\n').toLowerCase();
+            return values.includes(query.toLowerCase());
+        });
+    }
+
+    renderProjects(filteredProjects, projectsContainer, 'h2');
 }
 
 let query = '';
