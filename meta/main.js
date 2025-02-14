@@ -128,13 +128,13 @@ function displayStats() {
       .style('overflow', 'visible');
   
     // Create scales
-    const xScale = d3
+    xScale = d3
       .scaleTime()
       .domain(d3.extent(commits, (d) => d.datetime))
       .range([usableArea.left, usableArea.right])
       .nice();
   
-    const yScale = d3
+    yScale = d3
       .scaleLinear()
       .domain([0, 24])
       .range([usableArea.bottom, usableArea.top]);
@@ -235,6 +235,7 @@ function updateTooltipVisibility(isVisible) {
     tooltip.style.left = `${event.clientX}px`;
     tooltip.style.top = `${event.clientY}px`;
   }
+  let brushSelection = null;
 
   function brushSelector() {
     const svg = document.querySelector('svg');
@@ -242,9 +243,9 @@ function updateTooltipVisibility(isVisible) {
     d3.select(svg).selectAll('.dots, .overlay ~ *').raise();
   }
 
-    let brushSelection = null;
+  
 
-function brushed(event) {
+    function brushed(event) {
     brushSelection = event.selection;
     updateSelection();
     updateSelectionCount();
@@ -255,7 +256,6 @@ function brushed(event) {
     if (!brushSelection) {
         return false;
     }
-    if (!brushSelection) return false; 
     const min = { x: brushSelection[0][0], y: brushSelection[0][1] }; 
     const max = { x: brushSelection[1][0], y: brushSelection[1][1] }; 
     const x = xScale(commit.date); const y = yScale(commit.hourFrac); 
