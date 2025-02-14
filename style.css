@@ -229,6 +229,13 @@ dl.info {
   grid-template-columns: auto 1fr;
   gap: 0.5em 1em;
   margin: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .tooltip {

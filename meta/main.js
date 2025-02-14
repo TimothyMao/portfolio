@@ -132,16 +132,13 @@ function displayStats() {
     .attr('r', 5)
     .attr('fill', 'steelblue')
     .on('mouseenter', (event, commit) => {
-        const tooltip = document.querySelector('.tooltip');
-        tooltip.style.display = 'block';
-        tooltip.style.left = `${event.pageX + 10}px`;  // Add small x offset
-        tooltip.style.top = `${event.pageY - tooltip.offsetHeight - 10}px`;  // Position above cursor
         updateTooltipContent(commit);
-    })
+        updateTooltipVisibility(true);
+        updateTooltipPosition(event);
+      })
       .on('mouseleave', () => {
-        const tooltip = document.querySelector('.tooltip');
-        tooltip.style.display = 'none';
         updateTooltipContent({});
+        updateTooltipVisibility(false);
       });
 
   const margin = { top: 10, right: 10, bottom: 30, left: 20 };
@@ -207,3 +204,14 @@ svg
     await loadData();
     createScatterPlot();
 });
+
+function updateTooltipVisibility(isVisible) {
+    const tooltip = document.getElementById('commit-tooltip');
+    tooltip.hidden = !isVisible;
+  }
+
+  function updateTooltipPosition(event) {
+    const tooltip = document.getElementById('commit-tooltip');
+    tooltip.style.left = `${event.clientX}px`;
+    tooltip.style.top = `${event.clientY}px`;
+  }
