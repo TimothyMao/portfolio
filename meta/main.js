@@ -79,7 +79,7 @@ function displayStats() {
         let { author, date, time, timezone, datetime } = first;
         let ret = {
           id: commit,
-          url: 'https://github.com/vis-society/lab-7/commit/' + commit,
+          url: 'https://github.com/TimothyMao/portfolio/commit/' + commit,
           author,
           date,
           time,
@@ -130,7 +130,19 @@ function displayStats() {
     .attr('cx', (d) => xScale(d.datetime))
     .attr('cy', (d) => yScale(d.hourFrac))
     .attr('r', 5)
-    .attr('fill', 'steelblue');
+    .attr('fill', 'steelblue')
+    .on('mouseenter', (event, commit) => {
+        const tooltip = document.querySelector('.tooltip');
+        tooltip.style.display = 'block';
+        tooltip.style.left = `${event.pageX + 10}px`;  // Add small x offset
+        tooltip.style.top = `${event.pageY - tooltip.offsetHeight - 10}px`;  // Position above cursor
+        updateTooltipContent(commit);
+    })
+      .on('mouseleave', () => {
+        const tooltip = document.querySelector('.tooltip');
+        tooltip.style.display = 'none';
+        updateTooltipContent({});
+      });
 
   const margin = { top: 10, right: 10, bottom: 30, left: 20 };
   const usableArea = {
@@ -167,10 +179,29 @@ svg
 svg
   .append('g')
   .attr('transform', `translate(${usableArea.left}, 0)`)
-  .call(yAxis);
-
-  
+  .call(yAxis);  
   }
+
+  function updateTooltipContent(commit) {
+    const link = document.getElementById('commit-link');
+    const date = document.getElementById('commit-date');
+    const time = document.getElementById('commit-time');
+    const author = document.getElementById('commit-author');
+    const lines = document.getElementById('commit-lines');
+    if (Object.keys(commit).length === 0) return;
+  
+    if (Object.keys(commit).length === 0) return;
+
+    link.href = commit.url;
+    link.textContent = commit.id;
+    date.textContent = commit.datetime?.toLocaleString('en', {
+        dateStyle: 'full'
+    });
+    time.textContent = commit.datetime?.toLocaleTimeString();
+    author.textContent = commit.author;
+    lines.textContent = commit.totalLines;
+}
+  
 
   document.addEventListener('DOMContentLoaded', async () => {
     await loadData();

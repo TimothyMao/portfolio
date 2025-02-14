@@ -222,3 +222,31 @@ path {
 .axis path {
   stroke: oklch(50% 0 0 / 30%);
 }
+
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em 1em;
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;
+  background: oklch(98% 0 0 / 95%);
+  padding: 1em;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px oklch(0 0 0 / 10%);
+  pointer-events: none;
+  z-index: 1000;
+  transition: all 0.2s ease;
+}
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
