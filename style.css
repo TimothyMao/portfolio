@@ -208,3 +208,17 @@ path {
   }
 }
 
+.gridlines line {
+  stroke: oklch(50% 0 0 / 40%);
+  stroke-dasharray: 2,2;
+}
+
+.gridlines path {
+  display: none;
+}
+
+/* Make axis lines more prominent than gridlines */
+.axis line,
+.axis path {
+  stroke: oklch(50% 0 0 / 30%);
+}
