@@ -3,28 +3,28 @@
         "title": "COGS108_Repo",
         "year": "2025",
         "url": "https://github.com/COGS108/Group005_WI25",
-        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "image": "assets/image_2025-02-24_234116215.png",
         "description": "Upcoming project for COGS108."
     },
     {
         "title": "Expository Visualization",
         "year":"2025",
         "url": "https://docs.google.com/document/d/1_x4KSwB0hVZTCwMGmZ3yPKVWoxgqEATpQdhtgRUgiu0/edit?usp=sharing",
-        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "image": "assets/image_2025-02-24_233941178.png",
         "description": "Designed an expository visualization to clearly communicate an idea based on a small data set"
     },
     {
         "title": "Deceptive Visualization",
         "year":"2025",
         "url": "https://docs.google.com/document/d/1jWFRuFc44rtXZ8-MGJWhC4KrwPY34RWfe2ZOLXu_T4g/edit?usp=sharing",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "image": "assets/image_2025-02-24_234003229.png",
         "description": "Creates two static visualizations using the same dataset. The first is a truthful representation of the data. The second is a deceptive visualization, designed to deceive the viewer."
     },
     {
         "title": "Recipes and Ratings",
         "year": "2024",
         "url": "https://github.com/TimothyMao/Recipes_Ratings",
-        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "image": "assets/image_2025-02-24_234020284.png",
         "description": "Project for dsc80 that explored a Recipes and Ratings dataset and compared them."
     },
     {
