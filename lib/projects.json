@@ -70,5 +70,12 @@
         "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Consectetur repudiandae accusamus nesciunt, magni, repellat aspernatur maxime autem explicabo deleniti ipsa accusantium est eum sequi adipisci fugiat eligendi eveniet reiciendis obcaecati dignissimos! Nostrum provident eum pariatur odit itaque nulla."
+    },
+    {
+        "title": "Bikewatching",
+        "year": "2025",
+        "url": "https://timothymao.github.io/bikewatching/",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Consectetur repudiandae accusamus nesciunt, magni, repellat aspernatur maxime autem explicabo deleniti ipsa accusantium est eum sequi adipisci fugiat eligendi eveniet reiciendis obcaecati dignissimos! Nostrum provident eum pariatur odit itaque nulla."
     }
 ]
