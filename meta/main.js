@@ -3,6 +3,8 @@ let commits = [];
 let xScale;
 let yScale;
 let selectedCommits = [];
+let commitProgress = 100;
+
 
 
 async function loadData() {
@@ -18,6 +20,7 @@ async function loadData() {
         
         await displayStats();
         console.log('Data loaded:', data.length, 'rows');
+
     } catch (error) {
         console.error('Error loading data:', error);
         document.querySelector('#stats').innerHTML = 'Error loading statistics';
@@ -28,6 +31,39 @@ function displayStats() {
     // Process commits first
     processCommits();
     
+      // Create time scale mapping commit timestamps to a 0-100 scale
+      let timeScale = d3.scaleTime()
+      .domain(d3.extent(commits, d => d.datetime))
+      .range([0, 100]);
+  
+  // Convert progress percentage back to datetime
+  let commitMaxTime = timeScale.invert(commitProgress);
+  
+  function updateTimeDisplay() {
+      let timeFilter = Number(timeSlider.value);
+      
+      // Get the corresponding datetime from the scale
+      let selectedDate = timeScale.invert(timeFilter);
+      
+      // Format the selected time using toLocaleString()
+      selectedTime.textContent = selectedDate.toLocaleString('en', {
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true
+      });
+  }
+  
+  // Attach slider event listener
+  const timeSlider = document.getElementById('time-slider');
+  const selectedTime = document.getElementById('selected-time');
+  timeSlider.addEventListener('input', updateTimeDisplay);
+  
+  // Initialize display
+  updateTimeDisplay();
+  
     // Calculate additional stats
     const fileLengths = d3.rollups(
         data,
@@ -106,7 +142,6 @@ function displayStats() {
       });
   }
 
-
   function createScatterPlot() {
     const width = 1000;
     const height = 600;
@@ -121,6 +156,7 @@ function displayStats() {
       height: height - margin.top - margin.bottom,
     };
   
+    
     // Create SVG
     const svg = d3
       .select('#chart')
@@ -205,6 +241,7 @@ function displayStats() {
       .call(yAxis);
   }
 
+  
   function updateTooltipContent(commit) {
     const link = document.getElementById('commit-link');
     const date = document.getElementById('commit-date');
@@ -291,12 +328,17 @@ function updateTooltipVisibility(isVisible) {
 
       function updateLanguageBreakdown() {
         const container = document.getElementById('language-breakdown');
-
-        // If no commits are selected, clear the breakdown and return
+        const selectionCount = document.getElementById('selection-count');
+      
+        // If no commits are selected, clear the breakdown and update the selection count message
         if (selectedCommits.length === 0) {
-          container.innerHTML = '';
-          return;
+          container.innerHTML = ''; // Clear language breakdown
+          selectionCount.textContent = 'No commits selected'; // Set message when no commits are selected
+          return; // Exit the function early since no commits are selected
         }
+      
+        // When commits are selected, clear the "No commits selected" message
+        selectionCount.textContent = ''; // Clear "No commits selected" message
       
         const lines = selectedCommits.flatMap((d) => d.lines);
       
@@ -315,14 +357,14 @@ function updateTooltipVisibility(isVisible) {
           const formatted = d3.format('.1~%')(proportion);
       
           container.innerHTML += `
-                  <dt>${language}</dt>
-                  <dd>${count} lines (${formatted})</dd>
-              `;
+            <dt>${language}</dt>
+            <dd>${count} lines (${formatted})</dd>
+          `;
         }
       
         return breakdown;
       }
-
+      
 
   document.addEventListener('DOMContentLoaded', async () => {
     await loadData();

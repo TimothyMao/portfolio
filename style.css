@@ -289,3 +289,20 @@ article {
   word-wrap: break-word;
   overflow-wrap: break-word; /* Preferable for modern browsers */
 }
+
+#slider {
+  align-items: center;
+  width: 100%; /* Ensures it takes up full width */
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+#time-slider {
+  flex: 1
+}
+
+#selected-time {
+  text-align: right;
+  min-width: 50px; /* Adjust as needed */
+}
+

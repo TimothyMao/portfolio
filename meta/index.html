@@ -18,6 +18,13 @@
             <div id="stats"></div>
         </section>
     </main>
+    <div id = 'slider'>
+        <label for="time-slider">
+            Show commits until:
+            <input type="range" id="time-slider" min="0" max="100" value="100">
+            <time id="selected-time">00:00</time>
+        </label>    
+    </div>
     <h2>Commits by time of day</h2>
     <div id="chart"></div>
     <dl id="commit-tooltip" class="info tooltip">
